@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NQV Studio - Independent game development studio creating games and memorable journeys.">
+<title>NQV Studio | Official Website</title>
+<style>
+:root {
+  --bg: #0b1020;
+  --panel: #141d32;
+  --blue: #4f9cff;
+  --text: #f4f7ff;
+  --muted: #aab6cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+header {
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #26324a;
+  gap: 16px;
+}
+.logo { font-size: 24px; font-weight: 800; }
+.logo span { color: var(--blue); }
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+nav a { color: var(--muted); font-size: 14px; }
+nav a:hover { color: white; }
+.hero {
+  padding: 90px 7% 80px;
+  background: radial-gradient(ellipse at top right, #1c3964, transparent 60%);
+}
+.tag {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+h1 { font-size: clamp(42px, 8vw, 76px); line-height: 1.1; margin: 20px 0; }
+h1 span { color: var(--blue); }
+p { color: var(--muted); }
+.hero p { max-width: 600px; font-size: 18px; }
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  color: #071020;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+section { padding: 65px 7%; }
+h2 { font-size: 32px; margin-top: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid #293650;
+  border-radius: 14px;
+  padding: 25px;
+}
+.game-art {
+  min-height: 180px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #243f68, #101626 75%);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.game-art small { display: block; color: #a8cfff; font-size: 12px; }
+footer {
+  border-top: 1px solid #26324a;
+  padding: 30px 7%;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media(max-width: 520px) {
+  header { align-items: flex-start; flex-direction: column; }
+  nav { gap: 12px; }
+  .hero { padding-top: 60px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">NQV <span>STUDIO</span></a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#games">Games</a>
+    <a href="#credits">Credits</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="tag">Independent Game Studio</div>
+    <h1>We create games.<br>We create <span>memories.</span></h1>
+    <p>
+      Welcome to NQV Studio. We create interactive worlds
+      and memorable journeys for players everywhere.
+    </p>
+    <a class="btn" href="#games">Explore Our Games</a>
+  </div>
+
+  <section id="about">
+    <div class="tag">Who We Are</div>
+    <h2>About NQV Studio</h2>
+    <p>
+      NQV Studio is an independent game development studio
+      focused on creating accessible, engaging and memorable
+      gaming experiences.
+    </p>
+  </section>
+
+  <section id="games">
+    <div class="tag">Our Projects</div>
+    <h2>Featured Game</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="game-art">
+          WAY HOME
+          <small>A journey back home</small>
+        </div>
+        <h3>Way Home</h3>
+        <p>
+          A journey through the roads of life, inspired by
+          the warmth of family and the feeling of coming home.
+        </p>
+        <p><strong>Status:</strong> In Development</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="credits">
+    <div class="tag">Acknowledgements</div>
+    <h2>Credits</h2>
+    <p>
+      We respect the work of artists and creators whose
+      assets help bring our games to life.
+    </p>
+    <p>Asset attributions and third-party licenses will be listed here.</p>
+  </section>
+
+  <section id="privacy">
+    <div class="tag">Your Privacy</div>
+    <h2>Privacy Policy</h2>
+    <p>
+      Our privacy policy will explain what information our
+      games collect, how it is used, and how users can contact us.
+    </p>
+    <p>Please refer to the applicable privacy policy for each game.</p>
+  </section>
+
+  <section id="contact">
+    <div class="tag">Get In Touch</div>
+    <h2>Contact Us</h2>
+    <p>For business inquiries, feedback or support, contact:</p>
+    <p><a href="mailto:contact@nqvstudio.com">contact@nqvstudio.com</a></p>
+    <p><small>Set up this email address before publishing it as an active contact.</small></p>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">NQV <span>STUDIO</span></div>
+  <p>Creating games and memorable journeys.</p>
+  <p>© <span id="year">2026</span> NQV Studio. All rights reserved.</p>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
