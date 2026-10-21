@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tìm hiểu về NQV Studio, triết lý sáng tạo và hành trình phát triển trò chơi Way Home.">
+  <meta name="theme-color" content="#101d2d">
+  <title>Giới thiệu | NQV Studio</title>
+  <style>
+    :root {
+      --navy: #101d2d;
+      --navy-soft: #1b2d43;
+      --gold: #e8b85c;
+      --paper: #fffdf8;
+      --ink: #263344;
+      --muted: #647184;
+      --line: #e8e4db;
+      --teal: #216b66;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(232,184,92,.12), transparent 28rem),
+        #f3f5f7;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+    }
+
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      border-bottom: 3px solid var(--gold);
+    }
+    .header-inner {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .brand span { color: var(--gold); }
+    .back-link {
+      color: #f7e6bf;
+      text-decoration: none;
+      font-size: .95rem;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      padding: 8px 15px;
+      transition: background .2s, color .2s;
+    }
+    .back-link:hover { background: var(--gold); color: var(--navy); }
+
+    main {
+      width: min(1000px, calc(100% - 32px));
+      margin: 38px auto 64px;
+    }
+    .intro-heading {
+      text-align: center;
+      margin: 0 auto 28px;
+      max-width: 760px;
+    }
+    .eyebrow {
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      line-height: 1.18;
+      letter-spacing: -.035em;
+    }
+    .heading-subtitle {
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    .frame {
+      background: var(--paper);
+      border: 1px solid rgba(16,29,45,.09);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 42px rgba(16,29,45,.08);
+      margin-bottom: 28px;
+    }
+    .frame-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 24px;
+      color: var(--navy);
+      font-size: .95rem;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,253,248,.95);
+    }
+    .frame-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(232,184,92,.18);
+    }
+
+    .image-frame { padding: 14px; }
+    .image-frame .frame-label {
+      margin: -14px -14px 14px;
+    }
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 760px;
+      object-fit: contain;
+      object-position: center;
+      background: #101d2d;
+      border-radius: 14px;
+    }
+    .image-caption {
+      margin: 12px 8px 3px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    .article {
+      padding: clamp(22px, 5vw, 48px);
+    }
+    .article .lead {
+      font-size: 1.12rem;
+      color: #34465a;
+      border-left: 4px solid var(--gold);
+      padding: 3px 0 3px 20px;
+      margin: 0 0 32px;
+    }
+    .article section {
+      padding: 0 0 26px;
+      margin: 0 0 27px;
+      border-bottom: 1px solid var(--line);
+    }
+    .article section:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 8px;
+    }
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      line-height: 1.35;
+      margin: 0 0 13px;
+      letter-spacing: -.015em;
+    }
+    .section-number {
+      color: var(--teal);
+      font-size: .82em;
+      margin-right: 7px;
+    }
+    p { margin: 0 0 15px; }
+    p:last-child { margin-bottom: 0; }
+    .values {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+    .value-card {
+      padding: 16px 17px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .value-card strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .value-card span { color: var(--muted); font-size: .94rem; }
+    .closing {
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+    }
+    .closing strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(1.05rem, 2.7vw, 1.35rem);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .closing p { color: #e8edf3; margin: 0; }
+
+    .site-footer {
+      text-align: center;
+      background: var(--navy);
+      color: #d5dce5;
+      padding: 27px 18px;
+      font-size: .9rem;
+    }
+    .site-footer strong { color: var(--gold); }
+    .footer-link {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.35);
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { width: calc(100% - 24px); min-height: 66px; }
+      .brand { font-size: 1rem; }
+      .back-link { font-size: .84rem; padding: 7px 11px; }
+      main { width: calc(100% - 20px); margin-top: 26px; }
+      .intro-heading { margin-bottom: 22px; }
+      .frame { border-radius: 16px; margin-bottom: 20px; }
+      .frame-label { padding: 15px 17px; }
+      .image-frame { padding: 9px; }
+      .image-frame .frame-label { margin: -9px -9px 9px; }
+      .hero-image { border-radius: 10px; }
+      .article { padding: 22px 19px; }
+      .article .lead { font-size: 1.02rem; padding-left: 14px; }
+      .values { grid-template-columns: 1fr; }
+      .closing { padding: 21px 17px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="NQV Studio - Trang chủ">NQV <span>STUDIO</span></a>
+      <a class="back-link" href="index.html">← Về trang chủ</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro-heading">
+      <p class="eyebrow">Câu chuyện của chúng tôi</p>
+      <h1>NQV Studio</h1>
+      <p class="heading-subtitle">Nơi những ý tưởng trở thành hành trình — sáng tạo bằng công nghệ, vun đắp bằng sự tận tâm.</p>
+    </div>
+
+    <!-- Khung 1: Ảnh giới thiệu. Tên file phải khớp chính xác với file trong GitHub. -->
+    <section class="frame image-frame" aria-label="Hình ảnh giới thiệu NQV Studio">
+      <div class="frame-label">Hình ảnh giới thiệu</div>
+      <img
+        class="hero-image"
+        src="ảnh%20gi%E1%BB%9Bi%20thi%E1%BB%87u.jpg"
+        alt="Hình ảnh giới thiệu NQV Studio và tinh thần sáng tạo"
+        loading="eager"
+      >
+      <p class="image-caption">Mỗi hành trình đều bắt đầu từ một ước mơ và được vun đắp bằng những bước chân bền bỉ.</p>
+    </section>
+
+    <!-- Khung 2: Nội dung giới thiệu -->
+    <article class="frame article">
+      <div class="frame-label">Câu chuyện, tầm nhìn và giá trị của NQV Studio</div>
+
+      <p class="lead">
+        Chúng tôi tin rằng những điều được tạo nên bằng cả trái tim có thể mang đến những giá trị vượt xa giới hạn của một sản phẩm thông thường.
+      </p>
+
+      <section>
+        <h2><span class="section-number">01.</span>Về chúng tôi — Một hành trình bắt đầu từ đam mê</h2>
+        <p>NQV Studio được hình thành từ niềm đam mê sáng tạo và mong muốn dùng công nghệ, trí tưởng tượng cùng sự tận tâm để tạo nên những sản phẩm có ý nghĩa, mang đến niềm vui và để lại những cảm xúc đẹp trong lòng người trải nghiệm.</p>
+        <p>Chúng tôi hiểu rằng phía sau mỗi thành quả là một hành trình dài của học hỏi, thử nghiệm, khó khăn và những lần phải bắt đầu lại. Cũng như cây tre cần thời gian để bén rễ, con người cần sự kiên trì để trưởng thành. NQV Studio lựa chọn tiến lên bằng tinh thần ấy: bền bỉ, khiêm nhường và luôn trân trọng từng cơ hội được hoàn thiện mình.</p>
+        <p>Đối với chúng tôi, sáng tạo không chỉ là tạo ra cái mới, mà còn là tìm thấy ý nghĩa trong những điều thân thuộc; không chỉ là chinh phục công nghệ, mà còn là dùng công nghệ để kể những câu chuyện gần gũi với cuộc sống con người.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">02.</span>Triết lý sáng tạo — Công nghệ hiện đại, giá trị bền lâu</h2>
+        <p>Một sản phẩm tốt không chỉ được đánh giá qua hình thức hay tính năng. Giá trị sâu sắc hơn nằm ở cảm xúc mà sản phẩm khơi gợi, trải nghiệm mà nó mang lại và những điều tốt đẹp còn đọng lại sau khi người dùng rời đi.</p>
+        <p>Trong văn hóa Á Đông, những điều quý giá thường bắt nguồn từ những điều bình dị: bữa cơm gia đình, lời hỏi thăm của người thân, sự hy sinh thầm lặng của cha mẹ, tình nghĩa giữa con người với con người và niềm hạnh phúc khi được trở về nơi mình thuộc về.</p>
+        <p>Đó cũng là tinh thần NQV Studio mong muốn gửi gắm trong quá trình sáng tạo: kết hợp công nghệ hiện đại với cảm xúc gần gũi, trải nghiệm giải trí với những thông điệp nhân văn, và khát vọng khám phá thế giới với sự trân trọng những điều thân thuộc.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">03.</span>Tầm nhìn — Đi xa bằng chính những bước chân của mình</h2>
+        <p>NQV Studio hướng đến việc xây dựng một thương hiệu sáng tạo độc lập, phát triển các sản phẩm số và trò chơi có bản sắc riêng, từng bước tiếp cận cộng đồng người dùng tại Việt Nam và trên thế giới.</p>
+        <p>Chúng tôi không xem thành công là điều có thể đạt được chỉ sau một đêm. Đó là kết quả của việc tích lũy kinh nghiệm, hoàn thiện kỹ năng, lắng nghe người dùng, nâng cao chất lượng sản phẩm và không ngừng thích nghi với sự thay đổi của công nghệ.</p>
+        <p>Mỗi dự án là một bài học, mỗi phản hồi là một cơ hội cải thiện và mỗi người dùng tin tưởng lựa chọn sản phẩm của chúng tôi đều là một phần đáng trân trọng trên hành trình ấy. Chúng tôi có thể bắt đầu từ những bước đi nhỏ, nhưng luôn nuôi dưỡng ước mơ lớn và bền bỉ tiến về phía trước.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">04.</span>Sứ mệnh — Mang niềm vui đến gần hơn với mọi người</h2>
+        <p>Sứ mệnh của NQV Studio là sáng tạo những sản phẩm số mang lại trải nghiệm hữu ích, thú vị và giàu cảm xúc, góp phần làm phong phú đời sống tinh thần trong thời đại công nghệ.</p>
+        <p>Chúng tôi trân trọng thời gian mọi người dành cho sản phẩm của mình. Niềm tin không thể được tạo nên chỉ bằng những lời giới thiệu đẹp đẽ; nó cần được vun đắp bằng hành động: chăm chút từng chi tiết, lắng nghe góp ý, khắc phục thiếu sót và nỗ lực mang đến trải nghiệm ngày càng tốt hơn.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">05.</span>Way Home — Đường về nhà, hành trình của những điều thân thương</h2>
+        <p>Nhà là nơi mỗi người bắt đầu hành trình của cuộc đời. Đó có thể là mái nhà nhỏ nơi ta lớn lên, con đường quen thuộc dẫn về quê, tiếng gọi thân thương của người thân hay đơn giản là cảm giác bình yên khi biết rằng ở đâu đó vẫn có người mong mình trở về.</p>
+        <p>Từ cảm hứng ấy, <strong>Way Home</strong> được xây dựng như một hành trình vượt qua thử thách để tiến về phía trước. Mỗi chặng đường là một trải nghiệm, mỗi trở ngại là một cơ hội để người chơi rèn luyện sự kiên nhẫn và khả năng vượt khó.</p>
+        <p>Đằng sau trải nghiệm của một trò chơi, chúng tôi mong muốn gửi đến người chơi một thông điệp gần gũi: cuộc sống không phải lúc nào cũng bằng phẳng, và con đường đến với điều mình trân quý đôi khi đòi hỏi rất nhiều nỗ lực. Điều quan trọng không chỉ là đi nhanh đến đâu, mà còn là giữ được niềm tin và không quên lý do khiến mình bắt đầu.</p>
+        <p>Way Home không chỉ gợi nhắc về một điểm đến. Đó còn là lời nhắn gửi về gia đình, quê hương và những tình cảm bình dị mà đôi khi chúng ta vô tình bỏ quên giữa nhịp sống hối hả. Bởi sau tất cả, đi xa để trưởng thành là điều đáng quý, nhưng biết mình đang hướng về đâu mới là điều khiến hành trình trở nên có ý nghĩa.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">06.</span>Những giá trị chúng tôi gìn giữ</h2>
+        <p>NQV Studio lựa chọn phát triển dựa trên những giá trị giản dị nhưng bền vững. Đó là kim chỉ nam giúp chúng tôi đưa ra quyết định và hoàn thiện từng sản phẩm.</p>
+        <div class="values">
+          <div class="value-card"><strong>Chân thành</strong><span>Tôn trọng người dùng và luôn hướng đến chất lượng thực chất.</span></div>
+          <div class="value-card"><strong>Kiên trì</strong><span>Trân trọng từng bước tiến nhỏ, học hỏi từ khó khăn và không ngừng hoàn thiện.</span></div>
+          <div class="value-card"><strong>Đổi mới</strong><span>Khám phá công nghệ và phương pháp sáng tạo để tạo nên trải nghiệm tốt hơn.</span></div>
+          <div class="value-card"><strong>Trách nhiệm</strong><span>Biết ơn sự ủng hộ, lắng nghe góp ý và có trách nhiệm với sản phẩm mình tạo ra.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="section-number">07.</span>Con người và công nghệ — Cùng tạo nên giá trị</h2>
+        <p>NQV Studio nhìn nhận công nghệ như một cánh cửa rộng mở, giúp những ý tưởng vượt qua giới hạn của trí tưởng tượng để đến gần hơn với mọi người. Chúng tôi đón nhận các công cụ sáng tạo hiện đại với tinh thần cởi mở, đồng thời coi sự lựa chọn, định hướng và trách nhiệm của con người là những yếu tố quan trọng trong quá trình phát triển sản phẩm.</p>
+        <p>Công cụ có thể giúp công việc hiệu quả hơn, nhưng ý nghĩa của sản phẩm vẫn cần được xây dựng từ mục tiêu rõ ràng, sự chăm chút và mong muốn tạo ra trải nghiệm tốt cho người dùng. Chúng tôi không chạy theo sự mới lạ chỉ để gây chú ý, mà tìm kiếm những đổi mới thực sự có ý nghĩa.</p>
+      </section>
+
+      <section>
+        <h2><span class="section-number">08.</span>Lời tri ân — Cảm ơn vì đã đồng hành</h2>
+        <p>Mỗi hành trình đều trở nên đáng nhớ hơn khi có những người sẵn lòng dõi theo và sẻ chia. NQV Studio xin gửi lời cảm ơn chân thành đến tất cả những ai đã dành thời gian tìm hiểu, trải nghiệm và ủng hộ các sản phẩm của chúng tôi.</p>
+        <p>Cảm ơn những người đã tin tưởng ngay cả khi chúng tôi vẫn đang trên hành trình hoàn thiện. Cảm ơn những góp ý giúp chúng tôi nhìn thấy điều còn thiếu sót. Và cảm ơn cả những người chỉ tình cờ ghé thăm, bởi mỗi cuộc gặp gỡ đều mở ra một cơ hội để những ý tưởng được biết đến và lan tỏa.</p>
+        <p>Chúng tôi hiểu rằng niềm tin không đến từ những lời hứa lớn lao, mà được vun đắp bằng những việc làm nhỏ, đều đặn và chân thành theo thời gian. Nếu một ngày nào đó, sản phẩm của chúng tôi có thể khiến bạn mỉm cười, giúp bạn thư giãn sau một ngày dài hay gợi nhắc bạn nhớ về một người thân yêu, thì đó đã là một niềm hạnh phúc đáng trân trọng.</p>
+      </section>
+
+      <div class="closing">
+        <strong>NQV Studio — Trân trọng từng ý tưởng, nâng niu từng trải nghiệm, bền bỉ trên hành trình sáng tạo.</strong>
+        <p>Chúng tôi có thể đi chậm, nhưng sẽ luôn cố gắng tiến về phía trước bằng sự chân thành. Hy vọng NQV Studio sẽ có cơ hội trở thành một phần nhỏ bé trong những trải nghiệm đẹp của bạn.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <strong>NQV STUDIO</strong><br>
+    Sáng tạo bằng đam mê · Phát triển bằng sự tận tâm<br>
+    <a class="footer-link" href="index.html">Trở về trang chủ</a>
+  </footer>
+</body>
+</html>
