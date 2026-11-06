@@ -424,6 +424,64 @@ footer {
   gap: 16px;
 }
 
+/* WAY HOME ALPHA TEST */
+.alpha-section {
+  background: #ffffff;
+  padding: 64px 0;
+}
+.alpha-intro {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.alpha-icon {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 28px #071a2c18;
+}
+.alpha-copy h2 {
+  color: var(--navy);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.2;
+  margin: 5px 0 10px;
+}
+.alpha-copy p {
+  color: var(--muted);
+  max-width: 760px;
+}
+.alpha-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.alpha-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.alpha-shot {
+  overflow: hidden;
+  border-radius: 14px;
+  background: #eef2f7;
+  border: 1px solid #e1e6ee;
+  box-shadow: 0 8px 24px #071a2c0d;
+}
+.alpha-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.alpha-note {
+  margin-top: 18px;
+  color: #667085;
+  font-size: 13px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 850px) {
@@ -583,6 +641,26 @@ footer {
   .footer-bottom {
     flex-direction: column;
   }
+
+  .alpha-section {
+    padding: 42px 0;
+  }
+
+  .alpha-intro {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .alpha-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 17px;
+  }
+
+  .alpha-gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -617,8 +695,8 @@ footer {
       <a href="#news">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-<a class="btn btn-red" href="#games">
-      ▶ Google Play
+<a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
+      ▶ Join Alpha Test
     </a>
 
   </div>
@@ -633,8 +711,8 @@ footer {
       fetchpriority="high">
 
     <div class="hero-actions">
-      <a class="btn btn-red" href="#games">
-        ▶ Get the Game
+      <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
+        ▶ Join Alpha Test
       </a>
       <a class="btn btn-outline" href="#games">
         ▶ Watch Trailer
@@ -695,6 +773,42 @@ footer {
         alt="Way Home gameplay, Vietnamese streets and landscapes"
         loading="lazy">
 
+    </div>
+  </section>
+
+  <!-- WAY HOME ALPHA TEST -->
+  <section class="alpha-section" id="alpha-test">
+    <div class="container">
+      <div class="alpha-intro">
+        <img class="alpha-icon" src="way_home_icon_512.jpg" alt="way home game icon" loading="lazy">
+        <div class="alpha-copy">
+          <span class="eyebrow">Now testing</span>
+          <h2>Join the way home Alpha Test</h2>
+          <p>Be among the first players to experience way home. Explore familiar roads, enjoy the journey, and help NQV Studio make the game better with your feedback.</p>
+          <div class="alpha-cta">
+            <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">▶ Join Alpha Test on Google Play</a>
+            <a class="btn btn-outline" href="#alpha-screenshots" style="color: var(--navy); border-color: #cbd3df; background: white;">View Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading" id="alpha-screenshots">
+        <span class="eyebrow">In-game screenshots</span>
+        <h2>A glimpse of the journey</h2>
+        <p>Take a look at a few moments from way home.</p>
+      </div>
+      <div class="alpha-gallery">
+        <figure class="alpha-shot">
+          <img src="Way%20home%201.jpg" alt="way home gameplay screenshot 1" loading="lazy">
+        </figure>
+        <figure class="alpha-shot">
+          <img src="Way%20home%202.jpg" alt="way home gameplay screenshot 2" loading="lazy">
+        </figure>
+        <figure class="alpha-shot">
+          <img src="Way%20home%203.jpg" alt="way home gameplay screenshot 3" loading="lazy">
+        </figure>
+      </div>
+      <p class="alpha-note">Alpha test availability is managed through Google Play. Sign in with the Google account you use on your Android device.</p>
     </div>
   </section>
 
