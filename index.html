@@ -462,9 +462,11 @@ footer {
 .alpha-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
   gap: 18px;
 }
 .alpha-shot {
+  margin: 0;
   overflow: hidden;
   border-radius: 14px;
   background: #eef2f7;
@@ -472,9 +474,11 @@ footer {
   box-shadow: 0 8px 24px #071a2c0d;
 }
 .alpha-shot img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 .alpha-note {
   margin-top: 18px;
@@ -658,8 +662,8 @@ footer {
   }
 
   .alpha-gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
