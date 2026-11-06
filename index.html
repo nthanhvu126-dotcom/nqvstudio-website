@@ -658,8 +658,15 @@ footer {
   }
 
   .alpha-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .alpha-gallery {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
 }
 
@@ -714,7 +721,7 @@ footer {
       <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
         ▶ Join Alpha Test
       </a>
-      <a class="btn btn-outline" href="#games">
+      <a class="btn btn-outline" href="https://youtu.be/n-HMlbakBKk?si=ow0b2WYb4m5504BB" target="_blank" rel="noopener">
         ▶ Watch Trailer
       </a>
     </div>
@@ -763,15 +770,27 @@ footer {
   <section class="section games-section" id="games">
     <div class="container">
 
-      <div class="section-heading">
-        <span class="eyebrow">Our Games</span>
-        <h2>Featured Game</h2>
-        <p>Discover Way Home, a journey inspired by everyday life in Vietnam.</p>
+      <div class="section-heading" id="alpha-screenshots">
+        <span class="eyebrow">In-game screenshots</span>
+        <h2>A glimpse of the journey</h2>
+        <p>Explore a few moments from way home.</p>
       </div>
 
-      <img class="game-art" src="2.jpeg"
-        alt="Way Home gameplay, Vietnamese streets and landscapes"
-        loading="lazy">
+      <div class="alpha-gallery">
+        <figure class="alpha-shot">
+          <img src="Way%20home%201.jpg" alt="way home gameplay screenshot 1" loading="lazy">
+        </figure>
+        <figure class="alpha-shot">
+          <img src="Way%20home%202.jpg" alt="way home gameplay screenshot 2" loading="lazy">
+        </figure>
+        <figure class="alpha-shot">
+          <img src="Way%20home%203.jpg" alt="way home gameplay screenshot 3" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="alpha-cta" style="margin-top: 22px;">
+        <a class="btn btn-outline" href="https://youtu.be/n-HMlbakBKk?si=ow0b2WYb4m5504BB" target="_blank" rel="noopener">▶ Watch Trailer on YouTube</a>
+      </div>
 
     </div>
   </section>
@@ -792,22 +811,6 @@ footer {
         </div>
       </div>
 
-      <div class="section-heading" id="alpha-screenshots">
-        <span class="eyebrow">In-game screenshots</span>
-        <h2>A glimpse of the journey</h2>
-        <p>Take a look at a few moments from way home.</p>
-      </div>
-      <div class="alpha-gallery">
-        <figure class="alpha-shot">
-          <img src="Way%20home%201.jpg" alt="way home gameplay screenshot 1" loading="lazy">
-        </figure>
-        <figure class="alpha-shot">
-          <img src="Way%20home%202.jpg" alt="way home gameplay screenshot 2" loading="lazy">
-        </figure>
-        <figure class="alpha-shot">
-          <img src="Way%20home%203.jpg" alt="way home gameplay screenshot 3" loading="lazy">
-        </figure>
-      </div>
       <p class="alpha-note">Alpha test availability is managed through Google Play. Sign in with the Google account you use on your Android device.</p>
     </div>
   </section>
