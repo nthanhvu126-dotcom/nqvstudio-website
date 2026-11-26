@@ -487,6 +487,18 @@ footer {
   font-size: 13px;
 }
 
+
+/* OFFICIAL GOOGLE PLAY DOWNLOAD */
+.play-download { padding: 14px 22px; min-width: 210px; gap: 12px; }
+.play-mark { width: 38px; height: 38px; flex-shrink: 0; }
+.play-download span { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.play-download small { font-size: 10px; letter-spacing: 1px; font-weight: 600; }
+.play-download strong { font-size: 19px; }
+.internal-test-box { margin-top: 26px; padding: 18px 22px; background: #f4f6fa; border: 1px solid #dce3ed; border-radius: 14px; max-width: 620px; }
+.internal-label { display: inline-block; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.internal-test-box p { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+.internal-test-box a { color: #1769c2; font-size: 13px; font-weight: 800; text-decoration: underline; }
+
 /* RESPONSIVE */
 
 @media (max-width: 850px) {
@@ -708,7 +720,7 @@ footer {
       <a href="mailto:business@nqvstudio.com">Contact</a>
     </nav>
 <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
-      ▶ Join Alpha Test
+      ▶ Download on Google Play
     </a>
 
   </div>
@@ -724,7 +736,7 @@ footer {
 
     <div class="hero-actions">
       <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
-        ▶ Join Alpha Test
+        ▶ Download on Google Play
       </a>
       <a class="btn btn-outline" href="https://youtu.be/n-HMlbakBKk?si=ow0b2WYb4m5504BB" target="_blank" rel="noopener">
         ▶ Watch Trailer
@@ -800,23 +812,29 @@ footer {
     </div>
   </section>
 
-  <!-- WAY HOME ALPHA TEST -->
-  <section class="alpha-section" id="alpha-test">
+  <!-- WAY HOME OFFICIAL RELEASE -->
+  <section class="alpha-section" id="download">
     <div class="container">
       <div class="alpha-intro">
         <img class="alpha-icon" src="way_home_icon_512.jpg" alt="way home game icon" loading="lazy">
         <div class="alpha-copy">
-          <span class="eyebrow">Now testing</span>
-          <h2>Join the way home Alpha Test</h2>
-          <p>Be among the first players to experience way home. Explore familiar roads, enjoy the journey, and help NQV Studio make the game better with your feedback.</p>
+          <span class="eyebrow">Now available on Google Play</span>
+          <h2>Download way home</h2>
+          <p>Start your journey home. Explore familiar roads, enjoy the journey, and discover the world of way home by NQV Studio.</p>
           <div class="alpha-cta">
-            <a class="btn btn-red" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">▶ Join Alpha Test on Google Play</a>
+            <a class="btn btn-red play-download" href="https://play.google.com/store/apps/details?id=com.nqvstudio.wayhome" target="_blank" rel="noopener">
+              <svg class="play-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#34A853" d="M6 4.8v38.4c0 1.2.7 2.1 1.7 2.5L27 24 7.7 2.3C6.7 2.7 6 3.6 6 4.8Z"/><path fill="#4285F4" d="M7.7 2.3 27 24 34.2 16.8 10.3 1.2C9.4.6 8.4.5 7.7 2.3Z"/><path fill="#FBBC04" d="M27 24 7.7 45.7c.8 1.6 2.5 1.9 4.1 1l22.4-13.1L27 24Z"/><path fill="#EA4335" d="M34.2 16.8 27 24l7.2 7.2 9.1-5.3c2.2-1.3 2.2-2.6 0-3.9l-9.1-5.2Z"/></svg>
+              <span><small>GET IT ON</small><strong>Google Play</strong></span>
+            </a>
             <a class="btn btn-outline" href="#alpha-screenshots" style="color: var(--navy); border-color: #cbd3df; background: white;">View Screenshots</a>
           </div>
         </div>
       </div>
-
-      <p class="alpha-note">Alpha test availability is managed through Google Play. Sign in with the Google account you use on your Android device.</p>
+      <div class="internal-test-box">
+        <span class="internal-label">🔒 Internal testing</span>
+        <p>Need the internal test version? Use this private testing link.</p>
+        <a href="https://play.google.com/apps/internaltest/4701637359548553298" target="_blank" rel="noopener">Download internal test version ↗</a>
+      </div>
     </div>
   </section>
 
